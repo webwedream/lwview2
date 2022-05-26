@@ -19,6 +19,7 @@ export async function get(evt) {
       return {
         status: 200,
         body: {
+          isModified: newUser.isProfileEdited,
           teams: []
         }
       };
@@ -27,7 +28,7 @@ export async function get(evt) {
       evt.locals.session.destroy();
       return {
         status: 400,
-        message: "Bad request email has bad format."
+        body: {message: "Bad request email has bad format."}
       };
     } else {
       const myTeams = await PrismaC.team.findMany({
@@ -44,6 +45,7 @@ export async function get(evt) {
       return {
         status: 200,
         body: {
+          isModified: myUser?.isProfileEdited,
           teams: myTeams
         }
       };

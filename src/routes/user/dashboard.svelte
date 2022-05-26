@@ -1,5 +1,6 @@
 <script>
 import Navbar from "$Components/navbar.svelte";
+import ProfileAlert from "$Components/profileAlert.svelte";
 import TeamDashboard from "$Components/teamDashboard.svelte";
 import { Site } from "$Model/site";
 import { Store } from "$Model/store";
@@ -23,6 +24,7 @@ Store.subscribe((s) => {
   <p>Loading <FaSpinner /> </p>
 {:then value}
 <main class="prose lg:prose-xl" >
+  <ProfileAlert isModified={value.isModified} />
   <TeamDashboard teams={value.teams} />
 </main>
 {:catch error}

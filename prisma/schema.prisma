@@ -12,8 +12,11 @@ datasource db {
 
 model User {
   id String @id @default(uuid())
-  email String
+  email String @unique
+  name String @default("n/a")
+  role String @default("Other")
   teams Team[]
+  isProfileEdited Boolean @default(false)
 }
 
 model Team {
