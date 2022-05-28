@@ -13,12 +13,25 @@ export const Site = {
   ],
   adminMenu: [
     {
-      to: "/user/dashBoard",
+      to: "/user/dashboard",
       text: "Dashboard"
     },
     {
       to: "/user/projects",
       text: "projects"
+    }
+  ],
+  serviceCategoryMenu: [
+    {
+      to: "/service",
+      text: "All"
+    },
+    {
+      to: "/service/category-testing",
+      text: "Testing and Automation"
+    }, {
+      to: "/service/category-webdev",
+      text: "Development"
     }
   ]
 }

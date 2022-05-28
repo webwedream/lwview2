@@ -86,10 +86,29 @@ export async function getAllServices(limit) {
   }
 }
 
+
+/**
+ * 
+ * @param {string} tag 
+ */
+export async function getServicesByCategory(tag) {
+  try {
+    const services = await GhostClient.posts.browse({
+      limit: 20,
+      filter: "tag:service+tag:"+tag
+    });
+    return services;
+  } catch (error) {
+    console.error(error);
+    return [];
+  }
+}
+
 export default {
   GhostClient,
   getFirstPosts,
   getSinglePost,
   getSinglePage,
-  getAllServices
+  getAllServices,
+  getServicesByCategory
 };
