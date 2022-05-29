@@ -11,18 +11,49 @@ datasource db {
 }
 
 model User {
-  id String @id @default(uuid())
-  email String @unique
-  name String @default("n/a")
-  role String @default("Other")
-  teams Team[]
-  isProfileEdited Boolean @default(false)
+  id              String    @id @default(uuid())
+  email           String    @unique
+  name            String    @default("n/a")
+  role            String    @default("Other")
+  teams           Team[]
+  isProfileEdited Boolean   @default(false)
+  ownedProjects   Project[]
+  projects        Project[] @relation(name: "projects")
 }
 
 model Team {
-  id String @id @default(cuid())
-  name String
+  id          String @id @default(cuid())
+  name        String
   description String
-  role String
-  members User[]
+  role        String
+  members     User[]
+}
+
+model Project {
+  id           String        @id @default(cuid())
+  name         String
+  description  String
+  type         ProjectType
+  status       ProjectStatus
+  objectives   String?
+  aprId        String
+  approver     User          @relation(fields: [aprId], references: [id])
+  contributers User[]        @relation(name: "projects")
+  startDate DateTime?
+  estimatedEndDate DateTime?
+  actualEnd DateTime?
+}
+
+enum ProjectType {
+  APPLICATION_DEVELOPMENT
+  BUSINESS_ACTIVITY
+  BUGFIX
+}
+
+enum ProjectStatus {
+  IN_DESIGN
+  NOT_STARTED
+  IN_PROGRESS
+  COMPLETE
+  CANCELED
 }
