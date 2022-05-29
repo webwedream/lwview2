@@ -1,8 +1,8 @@
 import { PrismaC } from '$Model/prisma.js';
-import isEmail from 'validator/lib/isEmail';
+import Val from "validator";
 /** @type {import("./getTeam-[email].js").RequestHandler} */
 export async function get(evt) {
-  const parsedEmail = isEmail(evt.params.email)? evt.params.email : "na";
+  const parsedEmail = Val.isEmail(evt.params.email)? evt.params.email : "na";
   try {
     const myUser = await PrismaC.user.findFirst({
       where: {email: parsedEmail}
