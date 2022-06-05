@@ -1,6 +1,7 @@
 <script>
 import DashboardError from "./core/dashboardError.svelte";
 import GoInfo from 'svelte-icons/go/GoInfo.svelte';
+import ProjectQuickActions from "./projectQuickActions.svelte";
 
   /** @type {import("@prisma/client").Project} */
   export let project;
@@ -8,6 +9,7 @@ import GoInfo from 'svelte-icons/go/GoInfo.svelte';
 
 {#if project}
   <div class="container m-2">
+    <ProjectQuickActions id={project.id} />
     <h1>{project.name}</h1>
     <p>status: {project.status.replaceAll("_", " ").toLowerCase()} <GoInfo /></p>
     <p>type: {project.type.replaceAll("_", " ").toLowerCase()} </p>
