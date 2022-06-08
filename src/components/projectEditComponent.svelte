@@ -47,4 +47,18 @@
       {/each}
     </select>
   </label>
+  <h3>Dates (Optional)</h3>
+  <label class="label label-text" >Start Date: 
+    <input type="date" bind:value={rawProject.startDate} class="input" />
+  </label>
+  <label class="label label-text" >Estimated end date:
+    <input class="input" type="date" bind:value={rawProject.estimatedEndDate} />
+  </label>
+  <label class="label label-text" >actual end date:
+    <input class="input" type="date" bind:value={rawProject.actualEnd} />
+  </label>
+  <h3>Objectives (optional)</h3>
+  <label class="label label-text" >Objectives: 
+    <textarea class="textarea" cols={100} bind:value={rawProject.objectives} ></textarea>
+  </label>
 </main>
