@@ -9,7 +9,7 @@ export async function post(evt) {
     const rawProject = await evt.request.json();
     const updatedProjects = await PrismaC.project.updateMany({
       where: {
-        id: Val.isAlphanumeric(rawProject.id)? rawProject.id : "NA",
+        id: Val.isAlphanumeric(evt.params.id)? evt.params.id : "NA",
         contributers: {some: {id: evt.locals.session.data.uuid}}
       },
       data: {
@@ -17,9 +17,9 @@ export async function post(evt) {
         description: DOMPurify.sanitize(rawProject.description),
         status: DOMPurify.sanitize(rawProject.status),
         type: DOMPurify.sanitize(rawProject.type),
-        startDate: rawProject.startDate && Val.isDate(rawProject.startDate)? new Date(rawProject.startDate) : null,
-        estimatedEndDate: rawProject.estimatedEndDate && Val.isDate(rawProject.estimatedEndDate)? new Date(rawProject.estimatedEndDate) : null,
-        actualEnd: rawProject.actualEnd && Val.isDate(rawProject.actualEnd)? rawProject.actualEnd : null,
+        startDate: rawProject.startDate? rawProject.startDate : null,
+        estimatedEndDate: rawProject.estimatedEndDate? rawProject.estimatedEndDate : null,
+        actualEnd: rawProject.actualEnd? rawProject.actualEnd : null,
         objectives: rawProject.objectives? DOMPurify.sanitize(rawProject.objectives) : null
       }
     });
