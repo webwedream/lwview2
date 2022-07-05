@@ -2,6 +2,7 @@
 import DashboardError from "./core/dashboardError.svelte";
 import GoInfo from 'svelte-icons/go/GoInfo.svelte';
 import ProjectQuickActions from "./projectQuickActions.svelte";
+import ProjectContributer from "./projectContributer.svelte";
 
   /** @type {import("@prisma/client").Project} */
   export let project;
@@ -23,6 +24,7 @@ import ProjectQuickActions from "./projectQuickActions.svelte";
     {:else}
       <p>No objectives were defined.</p>
     {/if}
+    <ProjectContributer Contributers={project.contributers} />
   </div>
 {:else}
   <DashboardError type="Project" />

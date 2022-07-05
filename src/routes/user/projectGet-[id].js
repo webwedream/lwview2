@@ -8,6 +8,7 @@ export async function get(evt) {
       console.log("Could not parse id as it was alpha numeric. Original id is "+evt.params.id);
     }
     const proj = await PrismaC.project.findFirst({
+      include: {contributers: true},
       where: {
         id: parsedId,
         contributers: {some: {id: evt.locals.session.data.uuid}}
