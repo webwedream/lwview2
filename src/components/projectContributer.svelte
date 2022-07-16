@@ -1,8 +1,11 @@
 <script>
+import ProjectAddContributer from "./projectAddContributer.svelte";
+
   /** @type {import("@prisma/client").User[]} */
   export let Contributers;
 </script>
 <h3>Contributers</h3>
+<ProjectAddContributer />
 <table class="table" >
   <thead>
     <tr>

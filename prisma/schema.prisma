@@ -19,6 +19,7 @@ model User {
   isProfileEdited Boolean   @default(false)
   ownedProjects   Project[]
   projects        Project[] @relation(name: "projects")
+  organization String @default("None")
 }
 
 model Team {
