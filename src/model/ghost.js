@@ -1,7 +1,7 @@
 import GhostContentAPI from "@tryghost/content-api";
 
 export const GhostClient = new GhostContentAPI({
-  url: "http://209.126.6.227:3000",
+  url: "https://ghost.lwview.com",
   key: import.meta.env.VITE_GHOST_KEY,
   version: "v4.4"
 });

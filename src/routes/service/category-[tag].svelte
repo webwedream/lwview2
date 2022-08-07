@@ -14,5 +14,5 @@ export let services;
 <Navbar menu={Site.menu} />
 <main class="prose lg:prose-xl" >
   <CategoryMenu menu={Site.serviceCategoryMenu} />
-  <ServiceList services={services} />
+  <ServiceDash services={services} />
 </main>

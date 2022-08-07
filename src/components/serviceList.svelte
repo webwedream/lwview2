@@ -7,12 +7,14 @@ import site from "$Model/site";
   export let services;
 </script>
 <!-- service list container -->
-<div class="grid grid-cols-2 lg:grid-cols-3" >
+<div class="grid grid-cols-2" >
   {#each services as serv }
-    <div class="card" >
-      <div class="card-title" ><a class="btn btn-link" href={"/service/"+serv.slug} ><h3>{serv.title}</h3></a></div>
-      <div class="card-body" ><p>{serv.excerpt}</p></div>
-      <div class="card-actions" ><a class="btn btn-link" href={"/service/"+serv.slug} >Read More</a></div>
+    <div class="" >
+      <div class="h-1/3 w/1/2" >
+        <a class="btn btn-link block" href={"/service/"+serv.slug} ><h3>{serv.title}</h3></a>
+        <p class="block" >{serv.excerpt}</p>
+      </div>
+      <div class="" ><a class="btn btn-link" href={"/service/"+serv.slug} >Read More</a></div>
     </div>
   {/each}
 </div>
