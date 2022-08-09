@@ -1,5 +1,4 @@
 <script>
-import CategoryMenu from "$Components/categoryMenu.svelte";
 
 import Navbar from "$Components/navbar.svelte";
 import ServiceDash from "$Components/serviceDash.svelte";
@@ -11,7 +10,6 @@ export let services;
 <svelte:head>
   <title>Services - { Site.title }</title>
 </svelte:head>
-<main class="prose lg:prose-xl" >
-  <CategoryMenu menu={Site.serviceCategoryMenu} />
+<main class="format lg:format-lg" >
 <ServiceDash services={services} />
 </main>
