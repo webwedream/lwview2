@@ -9,6 +9,12 @@ export const Site = {
   }, {
     to: "/blog",
     text: "Blog"
+  }, {
+    to: "/contactUs",
+    text: "Contact Us"
+  }, {
+    to: "/about",
+    text: "About"
   }
   ],
   adminMenu: [

@@ -11,3 +11,27 @@
 .defaultGrid {
   @apply grid grid-cols-2 gap-28;
 }
+
+.featured {
+  @apply py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6;
+}
+
+.featuredCard {
+  @apply max-w-screen-md mb-8 lg:mb-16;
+}
+
+.featuredCard h1 {
+  @apply mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white;
+}
+
+.featuredCard p, .featuredCard ul {
+  @apply text-gray-500 sm:text-xl;
+}
+
+.featuredGrid {
+  @apply space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-4 md:space-y-0 ;
+}
+
+.featuredImg {
+  @apply flex justify-center items-center mb-4 w-10 h-10 rounded-full lg:h-12 lg:w-12;
+}
