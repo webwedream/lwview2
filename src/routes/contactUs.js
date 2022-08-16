@@ -3,7 +3,7 @@ import DOMPurify from "isomorphic-dompurify";
 import Val from "validator";
 sgmail.setApiKey(import.meta.env.VITE_SEND_GRID_API_KEY)
 /** @type {import("@sveltejs/kit").RequestHandler} */
-export async function post(evt) {
+export async function POST(evt) {
   try {
     const body = await evt.request.json();
     const parsedEmail = Val.isEmail(body.to)? body.to : "na";

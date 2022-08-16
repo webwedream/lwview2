@@ -2,7 +2,7 @@ import { getSinglePage } from "$Model/ghost";
 import DOMPurify from "isomorphic-dompurify";
 
 /** @type {import("./index.js").RequestHandler} */
-export async function get(evt) {
+export async function GET(evt) {
   try {
     const page = await getSinglePage("home");
     if (page) {

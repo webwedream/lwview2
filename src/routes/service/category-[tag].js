@@ -2,7 +2,7 @@ import { getServicesByCategory } from "$Model/ghost.js";
 import Val from "validator";
 
 /**  @type {import("./category-[tag].js").RequestHandler} */
-export async function get(evt) {
+export async function GET(evt) {
   try {
     const tag = Val.isAlphanumeric(evt.params.tag)? evt.params.tag : "na";
     const services = await getServicesByCategory(tag);

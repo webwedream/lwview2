@@ -1,7 +1,7 @@
 import { getFirstPosts } from "$Model/ghost";
 
 /** @type {import("./index.js").RequestHandler} */
-export async function get() {
+export async function GET() {
   try {
     const posts = await getFirstPosts().catch(err => console.error(err));
     return {

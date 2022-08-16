@@ -2,7 +2,7 @@ import { getSinglePage } from "$Model/ghost";
 import DOMPurify from "isomorphic-dompurify";
 
 /** @type {import("./[pslug].js").RequestHandler} */
-export async function get(evt) {
+export async function GET(evt) {
   try {
     const parsedSlug = /^[a-zA-Z0-9\-]*$/.test(evt.params.pslug)? evt.params.pslug : "na";
     const page = await getSinglePage(parsedSlug);

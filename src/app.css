@@ -9,27 +9,27 @@
   @apply bg-green-100 text-green-800 text-xs font-semibold mr-2 px-2.5 py-0.5 rounded dark:bg-green-200 dark:text-green-900;
 }
 .defaultGrid {
-  @apply grid grid-cols-2 gap-28;
+  @apply grid grid-cols-2 gap-4 max-w-screen-2xl;
 }
 
 .featured {
-  @apply py-8 px-4 mx-auto max-w-screen-xl sm:py-16 lg:px-6;
+  @apply py-8 px-4 mx-auto max-w-screen-2xl sm:py-16 lg:px-6;
 }
 
 .featuredCard {
-  @apply max-w-screen-md mb-8 lg:mb-16;
+  @apply max-w-screen-lg mb-8 lg:mb-16;
 }
 
-.featuredCard h1 {
+.featuredCard h1, .featuredCard h2 {
   @apply mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white;
 }
 
 .featuredCard p, .featuredCard ul {
-  @apply text-gray-500 sm:text-xl;
+  @apply text-gray-900 sm:text-xl;
 }
 
 .featuredGrid {
-  @apply space-y-8 md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-4 md:space-y-0 ;
+  @apply space-y-8 md:grid md:grid-cols-2 md:gap-4 md:space-y-0  max-w-screen-2xl w-full items-stretch;
 }
 
 .featuredImg {

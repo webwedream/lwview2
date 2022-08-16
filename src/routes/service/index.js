@@ -1,7 +1,7 @@
 import { getAllServices } from "$Model/ghost";
 
 /** @type {import("./index.js").RequestHandler} */
-export async function get(evt) {
+export async function GET(evt) {
   try {
     const services = await getAllServices(15);
     return {

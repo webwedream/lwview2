@@ -1,7 +1,7 @@
 import { getSinglePost } from "$Model/ghost.js";
 
 /** @type {import("./[slug].js").RequestHandler} */
-export async function get(evt) {
+export async function GET(evt) {
   const parsedSlug = /^[a-zA-Z0-9\-]+$/.test(evt.params.slug)? evt.params.slug : "na";
   try {
     const post = await getSinglePost(parsedSlug);

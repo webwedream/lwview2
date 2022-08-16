@@ -8,16 +8,12 @@
   class="bg-white px-2 sm:px-4 py-2.5 dark:bg-gray-900 w-full z-20 top-0 left-0 border-b border-gray-200 dark:border-gray-600"
 >
   <div class="container flex flex-wrap justify-between items-center mx-auto">
-    <a href="https://flowbite.com/" class="flex items-center">
+    <a href="/" class="flex items-center">
       <img
-        src="https://flowbite.com/docs/images/logo.svg"
-        class="mr-3 h-6 sm:h-9"
+        src="https://ghost.lwview.com/content/images/2022/08/image-6.png"
+        width="250" height="103"
         alt="LWVIEW Logo"
       />
-      <span
-        class="self-center text-xl font-semibold whitespace-nowrap dark:text-white"
-        >LWView</span
-      >
     </a>
     <div class="flex md:order-2">
       <button
@@ -47,7 +43,7 @@
       id="navbar-sticky"
     >
       <ul
-        class="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700"
+        class="flex flex-col p-4 mt-4 bg-gray-50 rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 flex-wrap"
       >
       {#each menu as mitem}
         <li>

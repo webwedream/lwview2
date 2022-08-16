@@ -6,7 +6,7 @@ export const GhostClient = new GhostContentAPI({
   version: "v4.4"
 });
 
-export async function getFirstPosts() {
+export async   function getFirstPosts() {
   try {
     const posts = await GhostClient.posts.browse({
       limit: 20,

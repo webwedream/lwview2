@@ -1,17 +1,9 @@
 import path from "path";
-import adapter from '@sveltejs/adapter-auto';
+import adapter from '@sveltejs/adapter-node';
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	kit: {
 		adapter: adapter(),
-		vite: {
-			resolve: {
-				alias: {
-					$Components: path.resolve("./src/components"),
-					$Model: path.resolve("./src/model")
-				} // end alias
-			} // end resolve
-		} // end vite
 	} // end kit
 };
 
