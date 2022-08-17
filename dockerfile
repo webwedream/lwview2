@@ -5,4 +5,3 @@ RUN yarn
 COPY . .
 RUN yarn build
 EXPOSE 5173
-ENTRYPOINT [ "node", "./build/index.js" ]
