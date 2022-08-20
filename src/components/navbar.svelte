@@ -11,7 +11,7 @@
     <a href="/" class="flex items-center">
       <img
         src="https://ghost.lwview.com/content/images/2022/08/image-6.png"
-        width="250" height="103"
+        width="125" height="52"
         alt="LWVIEW Logo"
       />
     </a>
