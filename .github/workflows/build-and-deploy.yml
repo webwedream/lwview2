@@ -23,5 +23,3 @@ jobs:
         SSH_USER: admin
         SSH_KEY: ${{ secrets.PRIVATE_KEY }}
         SSH_HOST: 209.126.6.227
-    - name: build
-      run: ssh prod 'echo test'
