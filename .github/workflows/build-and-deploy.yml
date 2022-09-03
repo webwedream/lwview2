@@ -21,5 +21,6 @@ jobs:
           git pull
           podman build -t lwview/lwviewsite:latest .
           cd ~
+          rm lwviewsite.tar
           podman save lwviewsite:latest > lwviewsite.tar
-          
+          microk8s ctr image import lwviewsite.tar
