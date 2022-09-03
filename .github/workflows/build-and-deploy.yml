@@ -5,6 +5,7 @@ on:
       - main
 jobs:
   build-and-deploy:
+    runs-on: ubuntu-latest
     steps:
     - name: ssh connection and commands
       uses: JimCronqvist/action-ssh@master
