@@ -7,19 +7,19 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: ssh connection
-      run: |
-        mkdir -p ~/.ssh/
-        echo "$SSH_KEY" > ~/.ssh/prod.key
-        chmod 600 ~/.ssh/prod.key
-        cat >>~/.ssh/config <<END
-          Host prod
-          HostName $SSH_HOST
-          User $SSH_USER
-          IdentityFile ~/.ssh/prod.key
-          StrictHostKeyChecking no
-        END
+    - name: ssh connection and commands
+      uses: JimCronqvist/action-ssh@master
       env:
-        SSH_USER: admin
-        SSH_KEY: ${{ secrets.PRIVATE_KEY }}
-        SSH_HOST: 209.126.6.227
+        NAME: "admin"
+      with:
+        hosts: 'admin@209.126.6.227'
+        privateKey: ${{ secrets.PRIVATE_KEY }}
+        debug: false
+        command: |
+          cd ~/lwview2
+          git stash
+          git pull
+          podman build -t lwview/lwviewsite:latest .
+          cd ~
+          podman save lwviewsite:latest > lwviewsite.tar
+          
