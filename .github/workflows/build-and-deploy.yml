@@ -20,11 +20,11 @@ jobs:
           git stash
           git pull
           podman rmi lwviewsite:latest -f
-          podman build -t lwview/lwviewsite:latest .
+          podman build -t lwview/lwviewsite:latest . --no-cache
           cd ~
           rm lwviewsite.tar
           podman save lwviewsite:latest > lwviewsite.tar
           /snap/bin/microk8s.ctr image import lwviewsite.tar
           cd ~/deployment
-          /snap/bin/microk8s.kubectl apply -f lwview.yaml
+          /snap/bin/microk8s.kubectl rollout restart deploy lwview
           exit 0
