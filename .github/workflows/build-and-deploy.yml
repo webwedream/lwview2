@@ -24,3 +24,6 @@ jobs:
           rm lwviewsite.tar
           podman save lwviewsite:latest > lwviewsite.tar
           /snap/bin/microk8s.ctr image import lwviewsite.tar
+          cd ~/deployment
+          /snap/bin/microk8s.kubectl apply -f lwview.yaml
+          exit 0
