@@ -10,7 +10,7 @@ jobs:
     - name: ssh connection and commands
       uses: JimCronqvist/action-ssh@master
       env:
-        NAME: "admin"
+        VERSION: 1.0.3
       with:
         hosts: 'admin@209.126.6.227'
         privateKey: ${{ secrets.PRIVATE_KEY }}
