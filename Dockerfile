@@ -4,6 +4,5 @@ COPY package*.json ./
 RUN yarn install --ignore-scripts
 COPY . .
 RUN yarn build
-RUN rm -rf ./node_modules
 EXPOSE 3000
 CMD [ "node", "./build/index.js" ]
