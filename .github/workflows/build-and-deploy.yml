@@ -19,6 +19,7 @@ jobs:
           cd ~/lwview2
           git stash
           git pull
+          podman rmi lwviewsite:latest -f
           podman build -t lwview/lwviewsite:latest .
           cd ~
           rm lwviewsite.tar
